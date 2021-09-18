@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Web Call V5 Quick Demo</title>
+  <script src="./assets/js/utils.js"></script>
+</head>
+<body>
+  <div class="rong-container">
+    <h3 class="rong-title"> Web Call V5 Quick Demo </h3>
+
+    <div id="rongUser" class="rong-user">
+      <span>用户 ID：</span>
+      <span id="rongUserId"></span>
+    </div>
+
+    <div class="rong-im" id="rongIM">
+      <p>请先进行 IM 链接</p>
+      <!--appkey-->
+      <div class="im-item">
+        <label>App Key</label>
+        <input type="text" id="appkey" placeholder="请输入 App Key">
+        <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [基本信息]</a> 获取</p>
+      </div>
+      <!--token-->
+      <div class="im-item">
+        <label>Token</label>
+        <input type="text" id="token" placeholder="请输入 Token">
+        <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [API 调用]</a> 获取</p>
+      </div>
+      <!--navi-->
+      <div class="im-item">
+        <label>Navi</label>
+        <input type="text" id="navi" placeholder="请输入 Navi 地址">
+        <p>非必填；私有云环境必填</p>
+      </div>
+      <!--mediaServer-->
+      <div class="im-item">
+        <label>MediaServer</label>
+        <input type="text" id="mediaServer" placeholder="请输入 MediaServer 地址">
+        <p>非必填选项</p>
+      </div>
+      <!--连接-->
+      <div class="im-item">
+        <button onclick="connectIM()">连接</button>
+      </div>
+    </div>
+
+    <div class="rong-call" id="rongCall" style="display: none;">
+      <!--呼叫选项-->
+      <div id="callParam" class="call-param">
+        <!--选择通话类型-->
+        <div class="param-item">
+          <label>通话类型</label>
+          <select name="" id="callType" onchange="callTypeChange()">
+            <option value="1">单聊</option>
+            <option value="3">群聊</option>
+          </select>
+          <p>必选</p>
+        </div>
+        <!--mediaType-->
+        <div class="param-item">
+          <label>媒体类型</label>
+          <select name="" id="callMediaType" onchange="callMediaTypeChange()">
+            <option value="1">音频</option>
+            <option value="2">音视频</option>
+          </select>
+          <p>必选</p>
+        </div>
+        <!--targetId-->
+        <div id="paramPrivate" class="param-item">
+          <label>对方 ID</label>
+          <input id="targetId" type="text" placeholder="对方 userId">
+          <p>必填；对方的 userId</p>
+        </div>
+        <!--targetId-->
+        <div id="paramGroupId" class="param-item" style="display: none;">
+          <label>群组 ID</label>
+          <input id="groupId" type="text" placeholder="群组 ID">
+          <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [API 调用]</a> 加入群组</p>
+        </div>
+        <!--userIds 只有群显示-->
+        <div id="paramInvitedIds" class="param-item" style="display: none;">
+          <label>被邀请者 ID</label>
+          <input id="userIds" type="text" placeholder="多个 userId 用英文半角逗号分开">
+          <p>必填；需加入群后，方可收到邀请。多个 userId 用英文半角逗号分开</p>
+        </div>
+      </div>
+      <!--通话操作按钮-->
+      <div class="opt-btn">
+        <button id="callBtn" class="btn-call" onclick="call()">呼叫</button>
+        <button id="acceptBtn" class="btn-accept" onclick="accept()">接听</button>
+        <button id="hungupBtn" class="btn-hungup" onclick="hungup()">挂断</button>
+      </div>
+      <!--通话视图展示-->
+      <div id="videoView" class="video-view"></div>
+    </div>
+  </div>
+  <div class="toast-wrap">
+    <span class="toast-msg"></span>
+  </div>
+  <!-- RongIMLib -->
+  <script src="./assets/lib/RongIMLib-4.4.8.prod.js"></script>
+  <!-- RTCLib v5 -->
+  <script src="./assets/lib/RCRTC-5.1.10-alpha.1.prod.js"></script>
+  <!-- Call v5 -->
+  <script src="./assets/lib/RCCall-5.0.1-alpha.12.prod.js"></script>
+  <script src="./assets/js/im.js"></script>
+  <script src="./assets/js/call.js"></script>
+</body>
+</html>

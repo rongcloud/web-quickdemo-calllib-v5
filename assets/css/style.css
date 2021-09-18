@@ -1,0 +1,199 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a:link {color: #2da2ea} /* 未被访问的链接 蓝色 */
+a:visited {color: #2da2ea} /* 已被访问过的链接 蓝色 */
+a:hover {color: #2da2ea} /* 鼠标悬浮在上的链接 蓝色 */
+a:active {color: #2da2ea} /* 鼠标点中激活链接 蓝色 */
+
+.rong-container {
+  background: #222831;
+  min-height: 100%;
+  min-width: 1400px;
+  color: #FFF;
+  font-size: 18px;
+  text-align: center;
+}
+.rong-container .rong-title {
+  margin: 0;
+  padding: 25px 0 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+}
+.rong-container .rong-user {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 100px;
+}
+.rong-container button {
+  width: 150px;
+  height: 30px;
+  border-radius: 2px;
+  background: #2da2ea;
+  border: none;
+  color: #fff;
+  box-shadow: 1px 1px 6px #00000069;
+  cursor: pointer;
+}
+.rong-container button:active {
+  width: 150px;
+  height: 30px;
+  border-radius: 2px;
+  background: #0f93e4;
+  border: none;
+  color: #fff;
+  box-shadow: 1px 1px 6px #00000069;
+  cursor: pointer;
+  /* opacity: .8; */
+}
+.rong-container .rong-im {
+  background: #eeeeee1c;
+  width: 850px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.rong-container .rong-im .im-item {
+  text-align: center;
+  margin-bottom: 10px;
+  height: 50px;
+  position: relative;
+}
+.rong-container .rong-im .im-tips {
+  width: 100px;
+}
+.rong-container .rong-im .im-item label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+.rong-container .rong-im .im-item input {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  height: 25px;
+  width: 600px;
+}
+.rong-container .rong-im .im-item p {
+  margin: 0px;
+  display: inline-block;
+  position: absolute;
+  left: 200px;
+  top: 30px;
+  color: #fff;
+  font-size: 13px;
+}
+.rong-container .rong-call {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.rong-container .rong-call .call-param {
+  padding: 10px;
+  background: #eeeeee1c;
+  width: 650px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.rong-container .rong-call select {
+  background: #4285F4;
+  width: 450px;
+  height: 30px;
+  border-radius: 2px;
+  border: none;
+  color: #fff;
+  text-align: center;
+}
+
+.rong-container .rong-call label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+.rong-container .rong-call input {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  height: 25px;
+  width: 450px;
+}
+.rong-container .rong-call .call-param .param-item,
+.rong-container .rong-call .call-item,
+.rong-container .rong-call .call-param,
+.rong-container .rong-call .opt-btn {
+  margin-bottom: 10px;
+}
+
+.rong-container .rong-call .call-param .param-item {
+  height: 50px;
+  position: relative;
+}
+.rong-container .rong-call .call-param .param-item p {
+  margin: 0px;
+  display: inline-block;
+  position: absolute;
+  left: 180px;
+  top: 30px;
+  color: #fff;
+  font-size: 13px;
+}
+.rong-container .rong-call .opt-btn .btn-accept, .rong-container .rong-call .opt-btn .btn-hungup {
+  display: none;
+}
+
+.rong-container .rong-call .video-view .video-item {
+  width: 320px;
+  height: 240px;
+  background: #1a7cb9;
+  position: relative;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 8px;
+}
+.rong-container .rong-call .video-view .video-item .video-user-id {
+  background: #a8d8ea9c;
+  position: absolute;
+  left: 2px;
+  display: inline-block;
+  padding: 0 5px;
+  border-radius: 2px;
+}
+.rong-container .rong-call .video-view .video-item .video-media-type {
+  position: absolute;
+  top: 41%;
+  right: 42%;
+}
+.rong-container .rong-call .video-view video {
+  width: 320px;
+  height: 240px;
+  border-radius: 2px;
+}
+
+
+/* toast */
+.toast-wrap {
+  display: inline-block;
+  opacity: 0;
+  position: fixed;
+  top: 5%;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.toast-msg {
+  background-color: rgba(89, 148, 236, 0.918);
+  border-radius: 2px;
+  padding: 10px 15px;
+}
+.toastAnimate {
+  animation: toastKF 2s;
+}
+@keyframes toastKF {
+  0%   {opacity: 0;}
+  25%  {opacity: 1; z-index: 9999}
+  50%  {opacity: 1; z-index: 9999}
+  75%  {opacity: 1; z-index: 9999}
+  100% {opacity: 0; z-index: 0}
+}
+
