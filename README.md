@@ -23,7 +23,7 @@
 
 **群呼 邀请者与被邀请者均需要加入到 IM 的群组中，[可在融云开发者后台 - 服务管理 - API 调用 - 群组服务中](https://developer.rongcloud.cn/apitool/bj4hYt7YBcwvXteZeVi7aQ) 中，加入群组**
 
-1. 开启两个 Tab 页面 A、B、C，分别登录 IM 
+1. 开启三个 Tab 页面 A、B、C，分别登录 IM 
 2. A 输入 群组 ID 及 被邀请者 ID
 3. B、C 页面收到邀请后点击接听，通话建立
 
