@@ -91,7 +91,7 @@ const getCallSessionEvent = () => {
       // 群组中移除相应节点
       const videoViewDom = RCDom.get('videoView');
       const videoDom = RCDom.get(`video-${sender.userId}`);
-      videoViewDom.removeChild(videoDom);
+      videoDom && videoViewDom.removeChild(videoDom);
 
     },
     onTrackReady: (track) => {

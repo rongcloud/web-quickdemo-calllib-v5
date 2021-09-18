@@ -20,31 +20,44 @@ const connectIM = () => {
   }
 
   // IM 客户端初始化
-  imClient = RongIMLib.init({
-    appkey,
-    navigators: navi ? [navi] : undefined,
+  RongIMLib.RongIMClient.init(appkey, null, {
+    navi: navi || null,
     logLevel: 1
   });
+  imClient = RongIMLib.RongIMClient.getInstance();
 
   // 初始化 RTC CallLib
   initRTC();
   initCall();
 
-  imClient.watch({
-    // 监听 IM 连接状态变化
-		status(evt) {
-			console.log('connection status change:', evt.status);
-		}
+  // 设置连接状态监听
+  RongIMClient.setConnectionStatusListener({
+    onChanged: function (status) {
+      // status 标识当前连接状态
+      console.log('连接状态: ', status)
+    }
+  });
+  // 设置消息监听
+  RongIMClient.setOnReceiveMessageListener({
+    // 接收到的消息
+    onReceived: function (message) {
+      console.info(message);
+    }
   });
 
   RCToast('正在链接 IM ... ☕️');
-  imClient.connect({ token }).then((user) => {
-    RCCallView.connectedIM();
-    RCCallView.readyToCall();
-    RCDom.get('rongUserId').innerText = user.id;
-    RCToast(`用户 ${user.id} IM 链接成功 ✌🏻`);
-  }).catch((error) => {
-    console.log(error)
-    RCToast('IM 链接失败，请检查网络后再试')
+  RongIMClient.connect(token, {
+    onSuccess: function(userId) {
+      RCCallView.connectedIM();
+      RCCallView.readyToCall();
+      RCDom.get('rongUserId').innerText = userId;
+      RCToast(`用户 ${userId} IM 链接成功 ✌🏻`);
+    },
+    onTokenIncorrect: function() {
+      RCToast('连接失败, 失败原因: token 无效');
+    },
+    onError: function(errorCode) {
+      RCToast(`连接失败, 失败原因: ${errorCode}`);
+    }
   });
 }

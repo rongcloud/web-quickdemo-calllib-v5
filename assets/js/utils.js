@@ -25,7 +25,7 @@ const RCToast = (msg) => {
     setTimeout(function(){
         toastTag.className = toastTag.className + ' toastAnimate';
     }, 10)
-  },10)
+  }, 10)
 }
 
 const RCCallView = {
