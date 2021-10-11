@@ -21,7 +21,7 @@ let callClient;
  */
 const initRTC = () => {
   const mediaServer = RCDom.get('mediaServer').value;
-  rtcClient = imClient.install(window.RCRTC.installer, {
+  rtcClient = RongIMLib.installPlugin(window.RCRTC.installer, {
     mediaServer: mediaServer || undefined,
     timeout: 30 * 1000,
     logLevel: window.RCEngine.LogLevel.DEBUG
@@ -33,7 +33,7 @@ const initRTC = () => {
  * 在 IM 初始化后进行初始化 （具体位置：im.js）
  */ 
 const initCall = () => {
-  callClient = imClient.install(window.RCCall.installer, {
+  callClient = RongIMLib.installPlugin(window.RCCall.installer, {
     rtcClient: rtcClient,
     onSession: (session) => {
       callSession = session;
