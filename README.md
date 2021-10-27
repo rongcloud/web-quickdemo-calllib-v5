@@ -1,13 +1,13 @@
 ## 快速集成 Demo - Call 场景
 
-## SDK 依赖 TODO 发版后修改
+## SDK 依赖
 ```html
 <!-- RongIMLib -->
-<script src="https://cdn.ronghub.com/RongIMLib-4.4.6.prod.js"></script>
+<script src="https://cdn.ronghub.com/RongIMLib-2.10.latest.js"></script>
 <!-- RTCLib v5 -->
-<script src="https://cdn.ronghub.com/RCRTC-5.1.7.prod.js"></script>
+<script src="https://cdn.ronghub.com/RCRTC-5.2.latest.js"></script>
 <!-- RongCallLib -->
-<script src="https://cdn.ronghub.com/RCCall-5.0.0.prod.js"></script>
+<script src="https://cdn.ronghub.com/RCCall-5.0.latest.js"></script>
 ```
 
 ## 使用说明
