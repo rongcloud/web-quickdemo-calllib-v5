@@ -18,18 +18,18 @@
     </div>
 
     <div class="rong-im" id="rongIM">
-      <p>请先进行 IM 链接</p>
+      <p>请先进行 IM 连接</p>
       <!--appkey-->
       <div class="im-item">
         <label>App Key</label>
         <input type="text" id="appkey" placeholder="请输入 App Key">
-        <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [基本信息]</a> 获取</p>
+        <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [服务管理] -> [基本信息]</a> 获取</p>
       </div>
       <!--token-->
       <div class="im-item">
         <label>Token</label>
         <input type="text" id="token" placeholder="请输入 Token">
-        <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [API 调用]</a> 获取</p>
+        <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [服务管理] -> [API 调用] -> [用户服务] -> [获取 token]</a> 获取</p>
       </div>
       <!--navi-->
       <div class="im-item">
@@ -41,7 +41,7 @@
       <div class="im-item">
         <label>MediaServer</label>
         <input type="text" id="mediaServer" placeholder="请输入 MediaServer 地址">
-        <p>非必填选项</p>
+        <p>非必填；音视频服务地址</p>
       </div>
       <!--连接-->
       <div class="im-item">
@@ -74,13 +74,13 @@
         <div id="paramPrivate" class="param-item">
           <label>对方 ID</label>
           <input id="targetId" type="text" placeholder="对方 userId">
-          <p>必填；对方的 userId</p>
+          <p>必填；对方的 userId，可通过<a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [服务管理] -> [API 调用] -> [用户服务] -> [获取 token]</a>获取，且登录成功</p>
         </div>
         <!--targetId-->
         <div id="paramGroupId" class="param-item" style="display: none;">
           <label>群组 ID</label>
           <input id="groupId" type="text" placeholder="群组 ID">
-          <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [API 调用]</a> 加入群组</p>
+          <p>必填；可通过 <a target="_blank" href="https://developer.rongcloud.cn/">[开发者后台] -> [服务管理] -> [API 调用] -> [群组服务] -> [加入群组]</a> 加入群组后获取</p>
         </div>
         <!--userIds 只有群显示-->
         <div id="paramInvitedIds" class="param-item" style="display: none;">

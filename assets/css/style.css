@@ -118,11 +118,15 @@ a:active {color: #2da2ea} /* 鼠标点中激活链接 蓝色 */
   height: 25px;
   width: 450px;
 }
-.rong-container .rong-call .call-param .param-item,
+
 .rong-container .rong-call .call-item,
 .rong-container .rong-call .call-param,
 .rong-container .rong-call .opt-btn {
   margin-bottom: 10px;
+}
+
+.rong-container .rong-call .call-param .param-item {
+  margin-bottom: 15px;
 }
 
 .rong-container .rong-call .call-param .param-item {
@@ -137,6 +141,7 @@ a:active {color: #2da2ea} /* 鼠标点中激活链接 蓝色 */
   top: 30px;
   color: #fff;
   font-size: 13px;
+  text-align: left;
 }
 .rong-container .rong-call .opt-btn .btn-accept, .rong-container .rong-call .opt-btn .btn-hungup {
   display: none;
