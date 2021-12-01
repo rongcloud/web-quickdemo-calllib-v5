@@ -3,11 +3,11 @@
 ## SDK 依赖 TODO 发版后修改
 ```html
 <!-- RongIMLib -->
-<script src="https://cdn.ronghub.com/RongIMLib-4.4.6.prod.js"></script>
+<script src="https://cdn.ronghub.com/RongIMLib-5.0.0.prod.js"></script>
 <!-- RTCLib v5 -->
-<script src="https://cdn.ronghub.com/RCRTC-5.1.7.prod.js"></script>
+<script src="https://cdn.ronghub.com/RCRTC-5.2.2.prod.js"></script>
 <!-- RongCallLib -->
-<script src="https://cdn.ronghub.com/RCCall-5.0.0.prod.js"></script>
+<script src="https://cdn.ronghub.com/RCCall-5.0.4.prod.js"></script>
 ```
 
 ## 使用说明

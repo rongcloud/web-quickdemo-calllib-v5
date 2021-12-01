@@ -32,7 +32,7 @@ const connectIM = () => {
     console.log('im 链接成功')
     RCCallView.connectedIM();
     RCCallView.readyToCall();
-    RCDom.get('rongUserId').innerText = res.id;
-    RCToast(`用户 ${res.id} IM 链接成功 ✌🏻`);
+    RCDom.get('rongUserId').innerText = res.data.userId;
+    RCToast(`用户 ${res.data.userId} IM 链接成功 ✌🏻`);
   });
 }
