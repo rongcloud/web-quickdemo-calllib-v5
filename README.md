@@ -3,11 +3,11 @@
 ## SDK 依赖 
 ```html
 <!-- RongIMLib -->
-<script src="https://cdn.ronghub.com/RongIMLib-4.5.latest.js"></script>
+<script src="https://cdn.ronghub.com/RongIMLib-v4-Adapter-5.7.2.prod.js"></script>
 <!-- RTCLib v5 -->
-<script src="https://cdn.ronghub.com/RCRTC-5.2.latest.js"></script>
-<!-- RongCallLib -->
-<script src="https://cdn.ronghub.com/RCCall-5.0.latest.js"></script>
+<script src="https://cdn.ronghub.com/RCRTC-5.6.latest.js"></script>
+<!-- Call v5 -->
+<script src="https://cdn.ronghub.com/RCCall-5.1.latest.js"></script>
 ```
 
 ## 使用说明
