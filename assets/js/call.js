@@ -210,6 +210,11 @@ const hungup = () => {
 const appendVideoEl = (track) => {
   const container = RCDom.get('videoView');
   if (track.isAudioTrack()) {
+    if (track.isLocalTrack()) {
+      return;
+    }
+    track.play();
+  } else {
     const uid = track.getUserId();
     const node = document.createElement('div');
     node.setAttribute('id', `video-${uid}`);
@@ -219,8 +224,6 @@ const appendVideoEl = (track) => {
     node.innerHTML = videoTpl;
     node.classList = 'video-item';
     container.appendChild(node);
-    track.play();
-  } else {
     const videoEl = RCDom.get(track.getUserId());
     track.play(videoEl)
   }
