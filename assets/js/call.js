@@ -23,8 +23,6 @@ const initRTC = () => {
   const mediaServer = RCDom.get('mediaServer').value;
   rtcClient = RongIMLib.installPlugin(window.RCRTC.installer, {
     mediaServer: mediaServer || undefined,
-    timeout: 30 * 1000,
-    logLevel: window.RCEngine.LogLevel.DEBUG
   });
 }
 

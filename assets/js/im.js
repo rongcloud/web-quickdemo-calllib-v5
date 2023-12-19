@@ -29,7 +29,11 @@ const connectIM = () => {
 
   RCToast('正在链接 IM ... ☕️');
   RongIMLib.connect(token).then(res => {
-    console.log('im 链接成功')
+    if (res.code !== RongIMLib.ErrorCode.SUCCESS) {
+      RCToast(`IM 链接失败，错误码：${res.code}`);
+      return;
+    }
+
     RCCallView.connectedIM();
     RCCallView.readyToCall();
     RCDom.get('rongUserId').innerText = res.data.userId;
