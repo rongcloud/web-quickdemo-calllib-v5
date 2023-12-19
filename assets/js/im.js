@@ -44,7 +44,7 @@ const connectIM = () => {
     RCDom.get('rongUserId').innerText = user.id;
     RCToast(`用户 ${user.id} IM 链接成功 ✌🏻`);
   }).catch((error) => {
-    console.log(error)
-    RCToast('IM 链接失败，请检查网络后再试')
+    console.log(`连接失败：${error.code}, ${error.msg}`)
+    RCToast(`连接失败：${error.code}, ${error.msg}`)
   });
 }
