@@ -209,22 +209,25 @@ const hungup = () => {
  * video 视图渲染
  */
 const appendVideoEl = (track) => {
-  const container = RCDom.get('videoView');
   if (track.isAudioTrack()) {
-    const uid = track.getUserId();
-    const node = document.createElement('div');
-    node.setAttribute('id', `video-${uid}`);
-    const videoTpl = `<span class="video-user-id">ID: ${uid}</span>
-      <span class="video-media-type">${mediaType === 1 ? '音频' : ''}</span>
-      <video id="${uid}"></video>`;
-    node.innerHTML = videoTpl;
-    node.classList = 'video-item';
-    container.appendChild(node);
-    track.play();
-  } else {
-    const videoEl = RCDom.get(track.getUserId());
-    track.play(videoEl)
+    if (!track.isLocalTrack()) {
+      track.play();
+    }
+    return
   }
+
+  const container = RCDom.get('videoView');
+  const uid = track.getUserId();
+  const node = document.createElement('div');
+  node.setAttribute('id', `video-${uid}`);
+  const videoTpl = `<span class="video-user-id">ID: ${uid}</span>
+    <span class="video-media-type">${mediaType === 1 ? '音频' : ''}</span>
+    <video id="${uid}"></video>`;
+  node.innerHTML = videoTpl;
+  node.classList = 'video-item';
+  container.appendChild(node);
+  const videoEl = RCDom.get(track.getUserId());
+  track.play(videoEl)
 }
 
 /**
