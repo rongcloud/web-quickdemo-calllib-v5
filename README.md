@@ -1,6 +1,6 @@
 ## 快速集成 Demo - Call 场景
 
-## SDK 依赖 TODO 发版后修改
+## SDK 依赖
 ```html
 <!-- RongIMLib v5 -->
 <script src="https://cdn.ronghub.com/RongIMLib-5.9.2.prod.js"></script>
